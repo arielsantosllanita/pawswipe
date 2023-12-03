@@ -1,7 +1,3 @@
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import { getServerSession } from "next-auth";
-import { redirect } from "next/navigation";
-import React from "react";
 import Image from "next/image";
 
 type Props = {
@@ -9,9 +5,6 @@ type Props = {
 };
 
 async function Page({ params }: Props) {
-  const session: any = await getServerSession(authOptions);
-  if (session.user.role === "admin") redirect("/admin/home");
-
   return (
     <div style={{ display: "flex", height: "100vh" }}>
       {/* Sidebar */}
