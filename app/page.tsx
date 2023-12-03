@@ -2,9 +2,6 @@
 import React, { useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import Image from "next/image";
-// import pawImage from 'src/imgs/paw.png';
-import pawImage from "src/imgs/paw-print.png";
-import homeBackground from "src/imgs/home.jpg";
 import { useRouter } from "next/navigation";
 
 export default function Home(): JSX.Element {
@@ -36,7 +33,7 @@ export default function Home(): JSX.Element {
     <div
       className="h-screen w-screen overflow-hidden flex items-center justify-center relative"
       style={{
-        backgroundImage: `url(${homeBackground.src})`,
+        backgroundImage: `url(/home.jpg)`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -68,7 +65,7 @@ export default function Home(): JSX.Element {
                 }}
               >
                 <Image
-                  src={pawImage}
+                  src={'/paw-print.png'}
                   alt="Paw"
                   className="paw-image"
                   width={pawWidth}
