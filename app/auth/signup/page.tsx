@@ -16,12 +16,12 @@ function Signup({}: Props) {
       const x = Object.keys(formKeys)[i];
       let value = form.get(x)!.toString();
       if (x == "password") value = await bcrypt.hash(value, 8);
-      if (x == 'birthday') value = new Date(value).toISOString();
-      
+      if (x == "birthday") value = new Date(value).toISOString();
+
       formKeys[x as keyof typeof formKeys] = value;
     }
-    
-    await userModel.create(formKeys);
+
+    await userModel.create({ ...formKeys, role: "user" });
 
     redirect("/auth/signin");
   }
