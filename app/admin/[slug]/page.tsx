@@ -1,16 +1,19 @@
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import { getServerSession } from "next-auth";
 import React from "react";
+import Home from "./home";
+import { notFound } from "next/navigation";
 
 type Props = {
-  params: { slug: "home" | "favorites" };
+  params: { slug: string };
 };
 
 async function Page({ params }: Props) {
-  const session = await getServerSession(authOptions);
-  console.log('SESSION', session);
+  switch (params.slug) {
+    case "home":
+      return <Home />
   
-  return <div>Admin {params.slug} Page</div>;
+    default:
+      return notFound();
+  }
 }
 
 export default Page;

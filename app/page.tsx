@@ -5,8 +5,10 @@ import Image from "next/image";
 // import pawImage from 'src/imgs/paw.png';
 import pawImage from "src/imgs/paw-print.png";
 import homeBackground from "src/imgs/home.jpg";
+import { useRouter } from "next/navigation";
 
 export default function Home(): JSX.Element {
+  const router = useRouter();
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [swipeOffset, setSwipeOffset] = useState<number>(0);
   const pawWidth = 50;
@@ -21,7 +23,7 @@ export default function Home(): JSX.Element {
     },
     onSwipedLeft: () => {
       setCurrentPage((prevPage) => (prevPage === 1 ? 2 : 1));
-      window.location.href = "/auth/signin";
+      router.push('/dashboard/home');
     },
     onSwipedRight: () => {
       setSwipeOffset(0);
