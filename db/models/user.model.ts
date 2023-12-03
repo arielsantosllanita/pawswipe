@@ -7,6 +7,7 @@ export interface User extends mongoose.Document {
   email: string;
   birthday: Date;
   gender: 'Male' | 'Female';
+  role?: string;
 }
 
 const schema = new mongoose.Schema<User>(
@@ -16,6 +17,7 @@ const schema = new mongoose.Schema<User>(
     email: { type: String, required: true },
     birthday: { type: Date, required: true },
     gender: { type: String, enum: ['Male', 'Female'], required: true },
+    role: { type: String, enum: ['user', 'admin'], required: false },
   },
   { timestamps: true }
 );

@@ -8,6 +8,7 @@ export interface Animal extends mongoose.Document {
   breed: string;
   gender: string;
   dateOfEuthanization: Date;
+  photo: string;
 }
 
 const schema = new mongoose.Schema<Animal>(
@@ -18,6 +19,7 @@ const schema = new mongoose.Schema<Animal>(
     breed: { type: String, required: true },
     gender: { type: String, required: true },
     dateOfEuthanization: { type: Date, required: true },
+    photo: { type: String, required: true },
   },
   { timestamps: true }
 );

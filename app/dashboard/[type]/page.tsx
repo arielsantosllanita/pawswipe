@@ -1,10 +1,15 @@
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { getServerSession } from "next-auth";
 import React from "react";
 
 type Props = {
   params: { type: "home" | "favorites" };
 };
 
-function Page({ params }: Props) {
+async function Page({ params }: Props) {
+  const session = await getServerSession(authOptions);
+  console.log('SESSION', session);
+  
   return <div>Dashboard {params.type} Page</div>;
 }
 
