@@ -1,6 +1,5 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { getServerSession } from "next-auth";
-import { redirect } from "next/navigation";
 import React from "react";
 
 type Props = {
@@ -8,10 +7,10 @@ type Props = {
 };
 
 async function Page({ params }: Props) {
-  const session:any = await getServerSession(authOptions);
-  if (session.user.role === 'admin') redirect('/admin/home');
+  const session = await getServerSession(authOptions);
+  console.log('SESSION', session);
   
-  return <div>Dashboard {params.type} Page</div>;
+  return <div>Admin {params.type} Page</div>;
 }
 
 export default Page;
