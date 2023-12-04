@@ -5,19 +5,6 @@ import React from "react";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 
-// Navbar Component
-// const Navbar = () => {
-//   // Add your Navbar content and structure here
-//   return (
-//     <nav className="bg-gray-800 p-4 text-white">
-//       <div className="container mx-auto">
-//         {/* Navbar content goes here */}
-//         Navbar Content
-//       </div>
-//     </nav>
-//   );
-// };
-
 type Props = {
   params: { type: "home" | "favorites" };
 };

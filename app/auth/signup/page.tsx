@@ -27,50 +27,64 @@ function Signup({}: Props) {
   }
 
   return (
-    <div className="w-11/12 md:w-5/12 mx-auto">
-      <div className="flex justify-center items-center h-screen">
-        <form action={signupHandler} className="w-full">
-          <div className="space-y-3">
-            {[
-              { key: "fullName", label: "Full name", type: "text" },
-              { key: "email", label: "Email", type: "email" },
-              { key: "password", label: "Password", type: "password" },
-              { key: "birthday", label: "Birthdate", type: "date" },
-            ].map((x) => (
-              <label key={x.key} className="form-control">
-                <div className="label">
-                  <span className="label-text">{x.label}</span>
-                </div>
-                <input
-                  type={x.type}
-                  name={x.key}
-                  placeholder="Type here"
-                  className="input input-bordered"
-                  required
-                />
-              </label>
-            ))}
+    <div className="container mx-auto flex justify-center items-center h-screen">
+      <div className="w-full max-w-md border rounded-lg p-8 bg-white">
+        <div className="h-auto">
+          {" "}
+          {/* Adjust the height here */}
+          <div className="flex justify-center items-center">
+            <form action={signupHandler} className="w-full">
+              <div className="space-y-3">
+                {[
+                  { key: "fullName", label: "Full name", type: "text" },
+                  { key: "email", label: "Email", type: "email" },
+                  { key: "password", label: "Password", type: "password" },
+                  { key: "birthday", label: "Birthdate", type: "date" },
+                ].map((x) => (
+                  <label key={x.key} className="form-control">
+                    <div className="label">
+                      <span className="label-text">{x.label}</span>
+                    </div>
+                    <input
+                      type={x.type}
+                      name={x.key}
+                      placeholder="Type here"
+                      className="input input-bordered"
+                      required
+                    />
+                  </label>
+                ))}
 
-            <label className="form-control">
-              <div className="label">
-                <span className="label-text">Gender</span>
+                <label className="form-control">
+                  <div className="label">
+                    <span className="label-text">Gender</span>
+                  </div>
+                  <select
+                    name="gender"
+                    className="select select-bordered"
+                    defaultValue={"Male"}
+                    required
+                  >
+                    <option value={"Male"}>Male</option>
+                    <option value={"Female"}>Female</option>
+                  </select>
+                </label>
+
+                <button
+                  type="submit"
+                  className="btn btn-primary btn-block"
+                  style={{
+                    backgroundColor: "#E0915F",
+                    color: "#ffffff",
+                    border: "1px solid #E0915F",
+                  }}
+                >
+                  Sign Up
+                </button>
               </div>
-              <select
-                name="gender"
-                className="select select-bordered"
-                defaultValue={"Male"}
-                required
-              >
-                <option value={"Male"}>Male</option>
-                <option value={"Female"}>Female</option>
-              </select>
-            </label>
-
-            <button type="submit" className="btn btn-primary btn-block">
-              Submit
-            </button>
+            </form>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   );
