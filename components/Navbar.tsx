@@ -12,7 +12,7 @@ function Navbar({ children, menuLinks }: Props) {
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         {/* Navbar */}
-        <div className="w-full navbar bg-base-300">
+        <div className="w-full navbar" style={{ backgroundColor: "#E0915F" }}>
           <div className="flex-none lg:hidden">
             <label
               htmlFor="my-drawer-3"
@@ -34,9 +34,11 @@ function Navbar({ children, menuLinks }: Props) {
               </svg>
             </label>
           </div>
-          <div className="flex-1 px-2 mx-2">PAWSWIPE</div>
+          <div className="flex-1 px-2 mx-2">
+            <span style={{ color: "white" }}>PAWSWIPE</span>
+          </div>
           <div className="flex-none hidden lg:block">
-            <ul className="menu menu-horizontal">
+            <ul className="menu menu-horizontal" style={{ color: "white" }}>
               {/* Navbar menu content here */}
               {menuLinks.map((x) => (
                 <li key={x.link}>
