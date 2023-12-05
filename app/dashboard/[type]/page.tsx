@@ -47,7 +47,12 @@ async function Page({ params }: Props) {
               {/* <Image src="/dog2.jpeg" alt="Dashboard Image" width={300} height={200} />
               <Image src="/dog3.jpeg" alt="Dashboard Image" width={300} height={200} /> */}
             </div>
-            <button type="submit" className="btn btn-block" style={{ width: "150px" }}>
+
+            <button
+              type="submit"
+              className="btn btn-primary btn-block"
+              style={{ width: "150px", color: "white" }}
+            >
               DONATE
             </button>
           </div>
