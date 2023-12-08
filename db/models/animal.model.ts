@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
 export interface Animal extends mongoose.Document {
+  _id: string;
   id: string;
   type: string;
   name: string;
@@ -9,11 +10,9 @@ export interface Animal extends mongoose.Document {
   gender: string;
   dateOfEuthanization: Date;
   photo: string;
-  donationInfo: {
-    type: string;
-    accountNumer: string;
-    accountHolderName?: string;
-  };
+  donationType: string;
+  donationAccNum: string;
+  donationHolderName: string;
 }
 
 const schema = new mongoose.Schema<Animal>(
@@ -25,7 +24,9 @@ const schema = new mongoose.Schema<Animal>(
     gender: { type: String, required: true },
     dateOfEuthanization: { type: Date, required: true },
     photo: { type: String, required: true },
-    donationInfo: { type: Object, required: false },
+    donationType: String,
+    donationAccNum: String,
+    donationHolderName: String,
   },
   { timestamps: true }
 );
