@@ -1,4 +1,4 @@
-// import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import React from "react";
@@ -15,10 +15,6 @@ async function Page({ params }: Props) {
 
   return (
     <div>
-      <Navbar menuLinks={[{ link: "/api/auth/signout?callbackUrl=/", label: "Logout" }]}>
-        {/* {children} */}
-      </Navbar>
-
       <div style={{ display: "flex", minHeight: "100vh" }}>
         {/* Sidebar */}
         <div
