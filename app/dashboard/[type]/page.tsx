@@ -19,7 +19,7 @@ async function Page({ params }: Props) {
         {/* {children} */}
       </Navbar>
 
-      <div style={{ display: "flex", height: "100vh" }}>
+      <div style={{ display: "flex", minHeight: "100vh" }}>
         {/* Sidebar */}
         <div
           style={{
@@ -28,7 +28,8 @@ async function Page({ params }: Props) {
             padding: "20px",
           }}
         >
-          Like List
+          <h2 style={{ marginBottom: "20px" }}>Like List</h2>
+          {/* Add your sidebar content here */}
         </div>
 
         <div style={{ width: "80%", padding: "20px" }}>
@@ -36,18 +37,20 @@ async function Page({ params }: Props) {
             style={{
               display: "flex",
               flexDirection: "column",
-              justifyContent: "center",
               alignItems: "center",
+              textAlign: "center",
               height: "100%",
             }}
           >
             <div style={{ marginBottom: "20px" }}>
-              {" "}
-              <Image src="/dog1.jpeg" alt="Dashboard Image" width={300} height={200} />
-              {/* <Image src="/dog2.jpeg" alt="Dashboard Image" width={300} height={200} />
-              <Image src="/dog3.jpeg" alt="Dashboard Image" width={300} height={200} /> */}
+              <Image src="/browny.jpeg" alt="Dashboard Image" width={300} height={200} />
             </div>
-
+            <p style={{ margin: "5px 0" }}>Name: Browny</p>
+            <p style={{ margin: "5px 0" }}>Breed: Aspin</p>
+            <p style={{ margin: "5px 0" }}>Gender: Male</p>
+            <p style={{ margin: "5px 0" }}>Disabilities: N/A</p>
+            <br />
+            <br />
             <button
               type="submit"
               className="btn btn-primary btn-block"
