@@ -13,6 +13,11 @@ function Signin({}: Props) {
   return (
     <div className="container mx-auto flex justify-center items-center h-screen">
       <div className="w-full max-w-md border rounded-lg p-8 bg-white">
+        <div className="flex justify-end space-x-4 mb-5">
+          <Link href={"/home"}>Home</Link>
+          <Link href={"/about-us"}>About Us</Link>
+        </div>
+
         <div className="text-center mb-6">
           <p>LOGO HERE</p>
         </div>
